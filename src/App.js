@@ -37,7 +37,7 @@ class App extends Component {
     }
 
     _callApi = () =>{
-      return fetch('http://localhost:8080/todo/?userNo=1')
+      return fetch('http://58.127.214.52:8082/todo/?userNo=1')
       .then(response => response.json())
       .then(todoList => todoList)
     }

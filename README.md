@@ -12,4 +12,4 @@ React를 활용하여 FrontEnd를 구현하고자 하였으나
 
 확인은 http://58.127.214.52:3001 에서 가능합니다.
 
-ubuntu에서 작업했고, jdk8, mysql 5.5 환경에서 작업했습니다.
+ubuntu에서 작업했고, jdk8, mysql8, tomcat8.5  환경에서 작업했습니다.

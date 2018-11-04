@@ -10,7 +10,7 @@ constructor(props){
 
 
 _subMitTodo=async()=>{
-   await fetch('http://localhost:8080/todo',{
+   await fetch('http://58.127.214.52:8082/todo',{
     headers:{
       "Content-Type": "application/json"
 

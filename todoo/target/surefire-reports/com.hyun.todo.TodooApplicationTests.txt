@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.hyun.todo.TodooApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.672 s <<< FAILURE! - in com.hyun.todo.TodooApplicationTests
+contextLoads(com.hyun.todo.TodooApplicationTests)  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: 
+Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Failed to create parent directories for [/temp/log/log.log]
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - openFile(/temp/log/log.log,true) call failed. java.io.FileNotFoundException: /temp/log/log.log (No such file or directory)
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyun.todo.mapper.TodoMapper">
+<resultMap id="todoMap" type="Todo">
+  <id property="no" column="TODO_NO" />
+  <result property="userNo" column="USER_NO"/>
+  <result property="title" column="TODO_NM"/>
+    <result property="content" column="TODO_CONTENT"/>
+  <result property="rank" column="TODO_RANK"/>
+    <result property="regDate" column="REG_DT"/>
+  <result property="limitDate" column="LIMIT_DT"/>
+  <result property="state" column="TODO_ST"/>
+  </resultMap>
+  <select id="selectByIdWithRank" resultMap="todoMap">
+    select * from TODO_TB where USER_NO = #{userNo}
+  </select>
+
+    <insert id="insertTodo" useGeneratedKeys="true" keyProperty="TODO_NO" parameterType="Todo"> 
+     insert into TODO_TB (USER_NO, TODO_NM, TODO_CONTENT, TODO_RANK, REG_DT, LIMIT_DT, TODO_ST)
+  values (#{userNo},#{title},#{content},#{rank}, NOW(), #{limitDate}, 0)
+    </insert>
+
+    <update id="updateTodo" parameterType="Todo">
+    update TODO_TB set
+    TODO_NM = #{title},
+    TODO_CONTENT = #{content},
+    TODO_RANK = #{rank},
+    LIMIT_DT= #{limitDate}
+  where TODO_NO = #{no}
+    </update>
+        <update id="updateState" parameterType="Todo">
+    update TODO_TB set
+    TODO_ST = #{state}
+  where TODO_NO = #{no}
+    </update>
+
+    <delete id="deleteTodo" parameterType="int">
+      delete from TODO_TB where TODO_NO = #{no}
+    </delete>
+</mapper>
